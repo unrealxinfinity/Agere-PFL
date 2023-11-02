@@ -44,5 +44,8 @@ O código do programa foi separado em diferentes ficheiros de acordo com as suas
   Para representar o jogador temos 2 cores que os corresponde e uma cor que representa espaço vazio: y(yellow) , b(blue) e o(empty).
   
   Para aglomerar o estado do tabuleiro e o estado do jogador, temos predicado **game(+CurrPlayerType, +NextPlayerType, +MoveCount, +GameState, -Winner)** que representa o estado do jogo e vai alternando os turnos do jogador fazendo chamadas recursivas.
+  Para distinguir os jogadores , usamos o MoveCount que é um atomo incremental e fazemos <ins>*MoveCount mod 2*</ins> para distinguir se par ou ímpar,atribuindo a jogada de acordo.
   
   Durante a execução de uma partida, a lógica do jogo junta as peças do tabuleiro com as suas respetivas posições no tabuleiro em forma de par [lista de todas as peças]-[lista das suas respetivas posições no tabuleiro], enquanto calcula as posições válidas para o jogador com o predicado **valid_moves(+GameState, +Player, -ListOfMoves)**. A tradução das posições na matrix para posições de um tabuleiro triangular foi um dos desafios, o tabuleiro está representado com matrix de filas desde 1 elemento até ao número de lado que jogador introduziu. Desta forma, para calcular a coluna da posição de uma peça correspondente ao tabuleiro, foi usado a fórmuma <ins>*(Número de filas do tabuleiro) - (Número de elementos de uma fila) + 1 - 2 x (numero da coluna da peça no matrix)*</ins>.
+### 2. Visualização do jogo
+ Para visualizar o jogo, mostramos o estado do tabuleiro com as peças e indicando as respetivas posições de fila e coluna.

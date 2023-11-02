@@ -3,6 +3,10 @@
 ## Trabalho realizado por
 - Haochang Fu (upxxxxxxxxx)
 - João Miguel Vieira Cardoso (up202108732)
+## Pré-requesitos, instalação e execução
+- Ter Sicstus instalado;
+- Descomprimir todos os ficheiros da pasta zip para uma pasta nova desde que consiga correr Sicstus nela;
+- Executar Sicstus, consultar o ficheiro "proj.pl" e começar a jogar.
 
 ## Descrição do jogo
 
@@ -22,3 +26,5 @@ As regras de jogo resume-se a duas decisões que os jogadores podem tomar em cad
 - Mover uma peça da sua cor para cima de uma peça adversária: Pegar numa peça da sua cor e movê-la para cima de uma peça adversária vizinha dela. No entanto, isto só é possível se a peça adversária tiver a mesma altura que a peça que pretendes mover. Na maneira como o nosso jogo está feito, só se o número ao lado das peças forem iguais é que será possível fazer isto.
 
 O jogo acaba quando houver uma ligação contínua de peças da mesma cor a ligar os 3 lados do tabuleiro. Mal que este estado se verifique, o jogo imediatamente termina e o jogador dono das peças que ligaram os lados do tabuleiro pronuncia-se como vencedor do jogo.
+
+[Link para regras do jogo em pdf](https://boardgamegeek.com/filepage/263282/agere-rules)

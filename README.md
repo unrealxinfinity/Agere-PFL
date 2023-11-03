@@ -59,4 +59,14 @@ O código do programa foi separado em diferentes ficheiros de acordo com as suas
 ### 5. End Game
  O predicado **game_over(+GameState,Winner)** verifica-se quando existir algum jogador que ganhe por unir os 3 lados com as peças da sua cor. Essa verificação é feita pelo predicado **check_end_condition(+GameState,-Winner)** 
  , o que faz um bfs pelas peças já colocadas pelo jogador e verifica se alguma dessas peças pertence a lista das peças que estão nos lados do triângulo, caso não haja pelo menos uma peça em cada lado o predicado falha  e se o no caminho percorrido não encontrar as 3 peças nos lados no caso de ganhar, tamém falha. Nesse caso não se executa o game_over/2.
-### 6. 
+### 6. Verificação de estado do jogo
+
+### 7. AI
+  Temos predicados no ficheiro AI.pl em que tem em conta o input recebido pelo menu e que divide o computador em 2 dificuldades: fácil e difícil.
+  O predicado **choose_move(+GameState, +Player, +Level, -Move)** distingue AI facil do difícil e utiliza diferentes implementaões de acordo para obter a move escolhida e distingue se é um input inicial para escolher posição ou se é o segundo input para escolher a posição para mover, unificando -Move em forma de Peça-Posição.
+  Para o AI fácil, este escolhe dentro da lista de jogadas possíveis um aleatório, e de acordo se existe peça nessa posição da sua cor ou não este distingue de adicionar uma peça ou mover uma peça. Caso seja adicionar o tabuleiro atualiza como quando o jogador joga e unifica com o novo GameState. Caso for mover peça este vê através de valid_moves/3, get_neightbour_pieces/3 e get_pieces_same_height/3 a lista de posições possíveis para mover a peça escolhida e de seguida escolhe uma aleatória dentro desta e executa a jogada.
+  Para o AI difícil, para verificar a melhor posição a escolher tem-se em conta 3 condições:
+  - Caso a posição escolhida para colocar a peça seja a peça para ganhar o jogo, o AI escolhe essa posição com maior prioridade;
+  - Caso a condição anterior falhe, o AI verifica se essa posição faça com que o adversário ganhe, simulando a colocação de uma peça na posição escolhida, caso sim o AI escolhe essa com segunda prioridade;
+  - Caso as duas condições anteriores não se verifiquem, o AI vai verificar a distância dessa posição aos 3 lados do triângulo e escolhe dentro de posições válidas o que tiver menor distãncia somada da posição âs 3 direções.
+  Para mover a peça no AI dificil, tem-se em conta as 3 condições anteriormente citadas outra vez para os vizinhos da posição escolhida e escolhe a melhor dos vizinhos de acordo com esses critérios.

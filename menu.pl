@@ -1,5 +1,6 @@
 menu_input(0, exit).
 menu_input(1, start).
+
 menu_players_input(0, exit).
 menu_players_input(1, back_menu). 
 menu_players_input(2, cvc). 
@@ -17,13 +18,7 @@ menu_difficulty_input_cvc(2, hard).
 menu_difficulty_input_cvc(3, easy).
 
 
-menu_final_input(2, easy).
-menu_final_input(3, hard).
 
-menu_final_input_cvc(0, exit).
-menu_final_input_cvc(1, back).
-menu_final_input_cvc(2, easy).
-menu_final_input_cvc(3, hard).
 
 	
 menu :-
@@ -52,9 +47,9 @@ menu_state(back_cvc):-
 
 menu_state(hvh):-
 	draw_choose_board_size_menu,
-	read_numbers(1, 15, Size),
+	read_numbers(1, 15, Size, _, _),
 	initial_state(Size, GameState),
-	start(1, 2, GameState).
+	game(human, human, 0, [[b-1],[y-1, b-1],[b-1, o-0, o-0],[b-1, y-1, b-1, o-0],[y-1, y-1, y-1, o-0, y-1]], o).
 
 menu_state(hvc):-
 	draw_choose_difficulty_menu('Please choose computer difficulty.'),
@@ -70,11 +65,15 @@ menu_state(cvc):-
 
 menu_state(easy):-
 	draw_choose_board_size_menu,
-	read_number_input(3, 9, Size).
+	read_numbers(1, 15, Size, _, _),
+	initial_state(Size, GameState),
+	game(human, easy, 0, GameState, o).
 
 menu_state(hard):-
 	draw_choose_board_size_menu,
-	read_number_input(3, 9, Size).
+	read_numbers(1, 15, Size, _, _),
+	initial_state(Size, GameState),
+	game(hard, hard, 0, [[b-1],[y-1, b-1],[b-1, o-0, o-0],[b-1, y-1, b-1, o-0],[y-1, y-1, y-1, o-0, y-1]], o).
 
 menu_state(exit, _):-
 	!,

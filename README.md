@@ -74,7 +74,7 @@ O código do programa foi separado em diferentes ficheiros de acordo com as suas
 - Nao sei
 - Nao sei
 - Nao sei
-### Conclusão
+### 8. Conclusão
   Em suma, o trabalho ajudou-nos a perceber melhor como os predicados funcionam e as suas interações para criar um programa, tabem ajudou-nos a melhor entender bfs.
   
   Limitações atuais do programa consiste na inteligência limitada do AI, este joga seguindo um conjunto específico de regras que não conseguem prever todos os casos, mas uma boa quantidade delas.

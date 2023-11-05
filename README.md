@@ -49,7 +49,9 @@ O código do programa foi separado em diferentes ficheiros de acordo com as suas
   Durante a execução de uma partida, a lógica do jogo junta as peças do tabuleiro com as suas respetivas posições no tabuleiro em forma de par [lista de todas as peças]-[lista das suas respetivas posições no tabuleiro], enquanto calcula as posições válidas para o jogador com o predicado **valid_moves(+GameState, +Player, -ListOfMoves)**. A tradução das posições na matrix para posições de um tabuleiro triangular foi um dos desafios, o tabuleiro está representado com matrix de filas desde 1 elemento até ao número de lado que jogador introduziu. Desta forma, para calcular a coluna da posição de uma peça correspondente ao tabuleiro, foi usado a fórmuma <ins>*(Número de filas do tabuleiro) - (Número de elementos de uma fila) + 1 - 2 x (numero da coluna da peça no matrix)*</ins>.
 ### 2. Visualização do jogo
  Para visualizar o jogo, temo várias momentos: durante a interação com o menu e durante o jogo.
+ 
  Durante a interação com o menu, temos o predicado **menu/0** que chama funções auxiliares que avaliam o estado do menu,**menu_state(+Event)**, e que mostram o menu de diferentes tipos de draw: **draw_initial_menu/0**,**draw_choose_player_type_menu/0**,**draw_choose_board_size_menu/0**,**draw_choose_difficulty_menu(-Text)**. Os predicado **menu_input(?Input,?Event)**, **menu_player_input(?Input,?Event)** e **menu_endgame_input(?Input,+PlayerType1,+PlayerType2,?Event)** escolhem estado de acordo com input do jogador,com **read_number_input(+Min,+Max,-Result)**, com verificação de validade. A interação com menu pode acontecer antes e depois de um jogo.
+ 
   Durante a execução de uma partida, o **initial_state/2** é usado para inicializar o tabuleiro vazio e o **display_game(+GameState)** dentro do **game/5** é usado para mostrar o tabuleiro.
 ### 3. Validação de jogadas e execução
  A validação de jogada em Agere depende da cor do jogador e das 2 operações possíveis: adicionar peça ou mover peça.
@@ -60,13 +62,15 @@ O código do programa foi separado em diferentes ficheiros de acordo com as suas
  O predicado **game_over(+GameState,Winner)** verifica-se quando existir algum jogador que ganhe por unir os 3 lados com as peças da sua cor. Essa verificação é feita pelo predicado **check_end_condition(+GameState,-Winner)** 
  , o que faz um bfs pelas peças já colocadas pelo jogador e verifica se alguma dessas peças pertence a lista das peças que estão nos lados do triângulo, caso não haja pelo menos uma peça em cada lado o predicado falha  e se o no caminho percorrido não encontrar as 3 peças nos lados no caso de ganhar, tamém falha. Nesse caso não se executa o game_over/2.
 ### 6. Verificação de estado do jogo
-
+  Nao sei.
 ### 7. AI
   Temos predicados no ficheiro AI.pl em que tem em conta o input recebido pelo menu e que divide o computador em 2 dificuldades: fácil e difícil.
+  
   O predicado **choose_move(+GameState, +Player, +Level, -Move)** distingue AI facil do difícil e utiliza diferentes implementaões de acordo para obter a move escolhida e distingue se é um input inicial para escolher posição ou se é o segundo input para escolher a posição para mover, unificando -Move em forma de Peça-Posição.
+  
   Para o AI fácil, este escolhe dentro da lista de jogadas possíveis um aleatório, e de acordo se existe peça nessa posição da sua cor ou não este distingue de adicionar uma peça ou mover uma peça. Caso seja adicionar o tabuleiro atualiza como quando o jogador joga e unifica com o novo GameState. Caso for mover peça este vê através de valid_moves/3, get_neightbour_pieces/3 e get_pieces_same_height/3 a lista de posições possíveis para mover a peça escolhida e de seguida escolhe uma aleatória dentro desta e executa a jogada.
   Para o AI difícil, para verificar a melhor posição a escolher tem-se em conta várias condições:
-  - Caso a posição escolhida para colocar a peça seja a peça para ganhar o jogo, o AI escolhe essa posição com maior prioridade;
-  - Caso a condição anterior falhe, o AI verifica se essa posição faça com que o adversário ganhe, simulando a colocação de uma peça na posição escolhida, caso sim o AI escolhe essa com segunda prioridade;
-  - Caso as duas condições anteriores não se verifiquem, o AI vai verificar a distância dessa posição aos 3 lados do triângulo e escolhe dentro de posições válidas o que tiver menor distãncia somada da posição âs 3 direções.
-  Para mover a peça no AI dificil, tem-se em conta as 3 condições anteriormente citadas outra vez para os vizinhos da posição escolhida e escolhe a melhor dos vizinhos de acordo com esses critérios.
+-Nao sei
+-Nao sei
+-Nao sei
+

@@ -1,7 +1,7 @@
 # AGERE_4
 
 ## Trabalho realizado por
-- Haochang Fu (upxxxxxxxxx)
+- Haochang Fu (up202108730)
 - João Miguel Vieira Cardoso (up202108732)
 ## Pré-requesitos, instalação e execução
 - Ter Sicstus instalado;
@@ -74,7 +74,11 @@ O código do programa foi separado em diferentes ficheiros de acordo com as suas
 - Nao sei
 - Nao sei
 - Nao sei
-### Conclusion
-  In the end, the work helped us better understand how each predicate work in order to create a program and how they interact with each other, as well as operations such as bfs. Current limitations consist in limited AI intelligence, it plays following a specific set of rules which can't predict every case scenario but covers a good amount of. Performance wise some places could be bettered.
-  Given the opportunity, the AI will be changed to the better after learning more about plays in this game.
+### Conclusao
+  Em suma, o trabalho ajudou-nos a perceber melhor como os predicados funcionam e as suas interações para criar um programa, tabem ajudou-nos a melhor entender bfs.
+  
+  Limitações atuais do programa consiste na inteligência limitada do AI, este joga seguindo um conjunto específico de regras que não conseguem prever todos os casos, mas uma boa quantidade delas.
+  Em termos de performance alguns sitios também podem ser melhorados.
+  
+  Dado a oportunidade, o AI vai ser mudado no futuro depois de conhecermos melhor as jogadas deste jogo.
 

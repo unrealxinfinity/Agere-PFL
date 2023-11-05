@@ -69,6 +69,7 @@ O código do programa foi separado em diferentes ficheiros de acordo com as suas
   O predicado **choose_move(+GameState, +Player, +Level, -Move)** distingue AI facil do difícil e utiliza diferentes implementaões de acordo para obter a move escolhida e distingue se é um input inicial para escolher posição ou se é o segundo input para escolher a posição para mover, unificando -Move em forma de Peça-Posição.
   
   Para o AI fácil, este escolhe dentro da lista de jogadas possíveis um aleatório, e de acordo se existe peça nessa posição da sua cor ou não este distingue de adicionar uma peça ou mover uma peça. Caso seja adicionar o tabuleiro atualiza como quando o jogador joga e unifica com o novo GameState. Caso for mover peça este vê através de valid_moves/3, get_neightbour_pieces/3 e get_pieces_same_height/3 a lista de posições possíveis para mover a peça escolhida e de seguida escolhe uma aleatória dentro desta e executa a jogada.
+  
   Para o AI difícil, para verificar a melhor posição a escolher tem-se em conta várias condições:
 - Nao sei
 - Nao sei

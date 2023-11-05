@@ -73,4 +73,7 @@ O código do programa foi separado em diferentes ficheiros de acordo com as suas
 - Nao sei
 - Nao sei
 - Nao sei
+### Conclusion
+  In the end, the work helped us better understand how each predicate work in order to create a program and how they interact with each other, as well as operations such as bfs. Current limitations consist in limited AI intelligence, it plays following a specific set of rules which can't predict every case scenario but covers a good amount of. Performance wise some places could be bettered.
+  Given the opportunity, the AI will be changed to the better after learning more about plays in this game.
 

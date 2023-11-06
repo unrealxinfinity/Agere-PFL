@@ -62,7 +62,7 @@ O código do programa foi separado em diferentes ficheiros de acordo com as suas
  O predicado **game_over(+GameState,Winner)** verifica-se quando existir algum jogador que ganhe por unir os 3 lados com as peças da sua cor. Essa verificação é feita pelo predicado **check_end_condition(+GameState,-Winner)** 
  , o que faz um bfs pelas peças já colocadas pelo jogador e verifica se alguma dessas peças pertence a lista das peças que estão nos lados do triângulo, caso não haja pelo menos uma peça em cada lado o predicado falha  e se o no caminho percorrido não encontrar as 3 peças nos lados no caso de ganhar, tamém falha. Nesse caso não se executa o game_over/2.
 ### 6. Verificação de estado do jogo
-  Nao sei.
+  **value(+GameState,+Player,-Values)** evaluates each valid board position for a player and assigns them with a priority value, the higher means the more priority the AI has to choose the given position. Returns a list of values for each position.
 ### 7. AI
   Temos predicados no ficheiro AI.pl em que tem em conta o input recebido pelo menu e que divide o computador em 2 dificuldades: fácil e difícil.
   

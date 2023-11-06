@@ -71,10 +71,17 @@ O código do programa foi separado em diferentes ficheiros de acordo com as suas
   
   Para o AI fácil, este escolhe dentro da lista de jogadas possíveis um aleatório, e de acordo se existe peça nessa posição da sua cor ou não este distingue de adicionar uma peça ou mover uma peça. Caso seja adicionar o tabuleiro atualiza como quando o jogador joga e unifica com o novo GameState. Caso for mover peça este vê através de valid_moves/3, get_neightbour_pieces/3 e get_pieces_same_height/3 a lista de posições possíveis para mover a peça escolhida e de seguida escolhe uma aleatória dentro desta e executa a jogada.
   
-  Para o AI difícil, para verificar a melhor posição a escolher tem-se em conta várias condições:
-- Nao sei
-- Nao sei
-- Nao sei
+ Para o AI difícil, para verificar a melhor posição a escolher tem-se em conta várias condições que são calculadas através de um algoritmo que depende do estado do jogo atual:
+- Se houver uma jogada que ganha o jogo, então essa jogada tem prioridade máxima
+- Se houver uma jogada que impede o adversário de ganhar então essa jogada tem prioridade muito alta, perto da máxima
+- Jogar uma peça próxima das peças da sua cor é uma ação greedy que a longo prazo pode levar a uma vitória, logo será atribuída a essa jogada maior pontuação
+- Se houver um espaço que já esteja a ser vigiado por uma peça inimiga, então descontar uma certa pontuação a essa jogada
+- Se o adversário tiver um peça de 2 ou mais de altura em jogo, atribuír maior pontuação a jogar perto dela
+- Se o adversário tiver uma peça de altura 1, prioritorizar jogar perto dela
+- Se houver uma peça inimiga disponível para ser saltada para cima, então atribuír uma pontuação extra a essa jogada também
+Se a peça onde estiver a tentar saltar for de altura maior do que 1 então não atribuír muita pontuação por essa jogada
+
+  O AI difícil irá avaliar cada uma das condições referidas anteriormente, e irá calcular uma jogada apropriada para o estado do jogo.
 ### 8. Conclusão
   Em suma, o trabalho ajudou-nos a perceber melhor como os predicados funcionam e as suas interações para criar um programa, tabem ajudou-nos a melhor entender bfs.
   

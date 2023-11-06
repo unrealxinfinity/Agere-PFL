@@ -91,4 +91,5 @@ Se a peça onde estiver a tentar saltar for de altura maior do que 1 então não
   Em termos de performance alguns sitios também podem ser melhorados.
   
   Dado a oportunidade, o AI vai ser mudado no futuro depois de conhecermos melhor as jogadas deste jogo.
-
+### 9. Bibliografia
+  Este trabalho foi feito com apoio nos slides das aulas teóricas e com base no pdf das regras de jogo que nos foram fornecidos. Como apoio auxiliar este [site](http://www.cse.unsw.edu.au/~billw/dictionaries/prologdict.html).

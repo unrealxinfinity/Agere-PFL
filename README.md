@@ -35,6 +35,7 @@ O código do programa foi separado em diferentes ficheiros de acordo com as suas
 - board.pl: Responsável pelos predicados que fazem a pesquisa e alteram o estado do tabuleiro (GameState);
 - display.pl: Responsável pelo output de vários elementos como o tabuleiro, o menu e o jogo;
 - game.pl: Responsável pela lógica durante a execução de uma partida em Agere;
+- game_over.pl: Responsável por verificar o fim do jogo.
 - menu.pl: Responsável pelas interações feitas ao menu e tudo relacionado;
 - proj.pl: Ficheiro a executar para começar o programa e inclui as livrarias que o programa usa para correr.
 

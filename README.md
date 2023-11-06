@@ -49,6 +49,8 @@ O código do programa foi separado em diferentes ficheiros de acordo com as suas
   
   Durante a execução de uma partida, a lógica do jogo junta as peças do tabuleiro com as suas respetivas posições no tabuleiro em forma de par [lista de todas as peças]-[lista das suas respetivas posições no tabuleiro], enquanto calcula as posições válidas para o jogador com o predicado **valid_moves(+GameState, +Player, -ListOfMoves)**. A tradução das posições na matrix para posições de um tabuleiro triangular foi um dos desafios, o tabuleiro está representado com matrix de filas desde 1 elemento até ao número de lado que jogador introduziu. Desta forma, para calcular a coluna da posição de uma peça correspondente ao tabuleiro, foi usado a fórmuma <ins>*(Número de filas do tabuleiro) - (Número de elementos de uma fila) + 1 - 2 x (numero da coluna da peça no matrix)*</ins>.
 ### 2. Visualização do jogo
+ Para uma melhor experiência, usar fonte de tamanho 12 no terminal de Sicstus.
+ 
  Para visualizar o jogo, temo várias momentos: durante a interação com o menu e durante o jogo.
  
  Durante a interação com o menu, temos o predicado **menu/0** que chama funções auxiliares que avaliam o estado do menu,**menu_state(+Event)**, e que mostram o menu de diferentes tipos de draw: **draw_initial_menu/0**,**draw_choose_player_type_menu/0**,**draw_choose_board_size_menu/0**,**draw_choose_difficulty_menu(-Text)**. Os predicado **menu_input(?Input,?Event)**, **menu_player_input(?Input,?Event)** e **menu_endgame_input(?Input,+PlayerType1,+PlayerType2,?Event)** escolhem estado de acordo com input do jogador,com **read_number_input(+Min,+Max,-Result)**, com verificação de validade. A interação com menu pode acontecer antes e depois de um jogo.
